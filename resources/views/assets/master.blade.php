@@ -55,12 +55,23 @@
         <!-- style CSS
             ============================================ -->
         <link rel="stylesheet" href="{{asset('style.css')}}">
+        <link rel="stylesheet" href="{{asset('custom_style.css')}}">
         <!-- responsive CSS
             ============================================ -->
         <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
         <!-- modernizr JS
             ============================================ -->
         <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+         <!-- x-editor CSS
+		============================================ -->
+        <link rel="stylesheet" href="{{asset('css/editor/select2.css')}}">
+        <link rel="stylesheet" href="{{asset('css/editor/datetimepicker.css')}}">
+        <link rel="stylesheet" href="{{asset('css/editor/bootstrap-editable.css')}}">
+        <link rel="stylesheet" href="{{asset('css/editor/x-editor-style.css')}}">
+        <!-- normalize CSS
+            ============================================ -->
+        <link rel="stylesheet" href="{{asset('css/data-table/bootstrap-table.css')}}">
+        <link rel="stylesheet" href="{{asset('css/data-table/bootstrap-editable.css')}}">
     </head>
     
 <body>
@@ -113,6 +124,25 @@
     <!-- main JS============================================ -->
     <script src="{{asset('js/main.js')}}"></script>
     <!-- tawk chat JS============================================ -->
-    <script src="{{asset('js/tawk-chat.js')}}"></script>
+    {{-- <script src="{{asset('js/tawk-chat.js')}}"></script> --}}
+    <!-- tab JS============================================ -->
+    <script src="{{asset('js/tab.js')}}"></script>
+    <!-- data table JS============================================ -->
+    <script src="{{asset('js/data-table/bootstrap-table.js')}}"></script>
+    {{-- <script src="{{asset('js/data-table/tableExport.js')}}"></script> --}}
+    {{-- <script src="{{asset('js/data-table/data-table-active.js')}}"></script> --}}
+    {{-- <script src="{{asset('js/data-table/bootstrap-table-editable.js')}}"></script> --}}
+    {{-- <script src="{{asset('js/data-table/bootstrap-editable.js')}}"></script> --}}
+    <script src="{{asset('js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{asset('js/data-table/colResizable-1.5.source.js')}}"></script>
+    {{-- <script src="{{asset('js/data-table/bootstrap-table-export.js')}}"></script> --}}
+    <!--  editable JS============================================ -->
+    <script src="{{asset('js/editable/jquery.mockjax.js')}}"></script>
+    <script src="{{asset('js/editable/mock-active.js')}}"></script>
+    <script src="{{asset('js/editable/select2.js')}}"></script>
+    <script src="{{asset('js/editable/moment.min.js')}}"></script>
+    <script src="{{asset('js/editable/bootstrap-datetimepicker.js')}}"></script>
+    <script src="{{asset('js/editable/bootstrap-editable.js')}}"></script>
+    <script src="{{asset('js/editable/xediable-active.js')}}"></script>
 </body>
 </html>
