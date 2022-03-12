@@ -17,7 +17,11 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{route('Expenses-Entries.update',$entry->id)}}">
+                                        <form action="{{route('Expenses-Entries.update',$entry->id)}}" method="POST">
+                                            @method('patch')
+                                            @csrf
+                                            <input type="hidden" name="expense_category_id" value="{{$entry->expenses_category_id}}"/>
+
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">

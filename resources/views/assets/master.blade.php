@@ -144,5 +144,14 @@
     <script src="{{asset('js/editable/bootstrap-datetimepicker.js')}}"></script>
     <script src="{{asset('js/editable/bootstrap-editable.js')}}"></script>
     <script src="{{asset('js/editable/xediable-active.js')}}"></script>
+    <script>
+        function hideCancelButton(){
+            var el=document.getElementById("noti");
+            var show_el=document.getElementById("show-el");
+            el.style.display="none";
+            show_el.style.display="block";
+
+        }
+    </script>
 </body>
 </html>

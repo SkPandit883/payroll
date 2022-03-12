@@ -87,7 +87,17 @@
                                             <td class="datatable-ct"> 
                                                 <a href="{{route('Expenses-Entries.show',$expense->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a> 
                                                 <a style="color:#006DF0" href="{{route('Expenses-Entries.edit',$expense->id)}}"><i style="margin-left:4px" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                <a style="color:red" href="{{route('Expenses-Entries.destroy',$expense->id)}}"><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a>
+                                                {{-- <a style="color:red" href="{{route('Expenses-Entries.destroy',$expense->id)}}"><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a> --}}
+                                                <a class="dropdown-item" href="#" style="color:red"
+                                                    onclick="event.preventDefault();
+                                                                                        document.getElementById('destroy-form').submit();">
+                                                      <i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i>
+                                                    </a>
+
+                                                    <form id="destroy-form" action="{{ route('Expenses-Entries.destroy',$expense->id) }}" method="POST" style="display: none;">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                    </form>
                                             </td>
                                         
                                         </tr>

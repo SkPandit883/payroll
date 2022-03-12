@@ -87,7 +87,18 @@ class ExpensesEntryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->debit===null && $request->credit===null){
+            return redirect()->back()->with('error','at least one of the credit or debit must be assigned');
+        }
+        DebitCredit::where('id',$id)->update([
+            'date'=>$request->date,
+            'bill_no'=>$request->bill_no,
+            'particular'=>$request->particular,
+            'debit'=>$request->debit,
+            'credit'=>$request->credit,
+            'remarks'=>$request->remarks
+        ]);
+        return redirect(URL::to("/Expenses-Entries?expense_category_id=$request->expense_category_id"))->with('success','Successfully updated a record');
     }
 
     /**
@@ -98,6 +109,7 @@ class ExpensesEntryController extends Controller
      */
     public function destroy($id)
     {
-        //
+         DebitCredit::findOrFail($id)->delete();
+         return redirect()->back()->with('success','Successfully deleted a record');
     }
 }

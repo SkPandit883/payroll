@@ -255,8 +255,21 @@
                     <div class="breadcome-list">
                         <div class="row">
                             @if (session('success'))
-                                <div class="alert alert-success col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div id="noti" style="background-color: #006DF0;color:white" class=" toast alert-dismissible  col-lg-6 col-md-6 col-sm-6 col-xs-12" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header" >
+                                    <strong class="mr-auto">Success</strong>
+                                    <button type="button" style="color:white" onclick="hideCancelButton()"  class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                        <span   aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="toast-body">
+                                        {{ session('success') }}
+                                    </div>
+                                </div>
+                                {{-- <div style="background-color: #006DF0;color:white" class="alert alert-primary col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             {{ session('success') }}
+                                </div> --}} 
+                                <div id="show-el" style="display: none" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 </div>
                             @else
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
