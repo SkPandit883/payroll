@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('cash_books', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('bill_no');
+            $table->decimal('amount');
             $table->timestamps();
         });
     }

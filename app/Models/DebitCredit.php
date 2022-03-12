@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class DebitCredit extends Model
 {
     use HasFactory;
+    protected $guarded=[];
+    public function expenseCategory(){
+        return $this->belongsTo(ExpenseCategory::class,'expenses_category_id');
+    }
 }

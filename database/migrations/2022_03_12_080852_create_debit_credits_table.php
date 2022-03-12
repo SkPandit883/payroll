@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('debit_credits', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('expenses_category_id')->constrained('expense_categories');
+            $table->date('date');
+            $table->string('bill_no');
+            $table->string('particular');
+            $table->decimal('debit')->nullable()->default(0);
+            $table->decimal('credit')->nullable()->default(0);
+            $table->string('remarks');
             $table->timestamps();
         });
     }

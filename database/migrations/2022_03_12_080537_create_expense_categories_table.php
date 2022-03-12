@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('expense_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('salary_share',['salary','share'])->nullable();
+            $table->enum('category',['utility','personal','company']);
             $table->timestamps();
         });
     }

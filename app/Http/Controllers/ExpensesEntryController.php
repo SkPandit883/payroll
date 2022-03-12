@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DebitCredit;
 use Illuminate\Http\Request;
+use App\Models\ExpenseCategory;
+use Illuminate\Support\Facades\URL;
 
 class ExpensesEntryController extends Controller
 {
@@ -11,9 +14,10 @@ class ExpensesEntryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       return view('expenses.index');
+       $expense_category= ExpenseCategory::with(['expenses'=>function($query){$query->orderBy('id','DESC');}])->withSum('expenses as total_debit','debit')->withSum('expenses as total_credit','credit')->findOrFail($request->expense_category_id);
+       return view('expenses.index',compact('expense_category'));
     }
 
     /**
@@ -21,9 +25,10 @@ class ExpensesEntryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('expenses.create');
+        $expense_category_id= $request->expense_category_id;
+        return view('expenses.create',compact('expense_category_id'));
     }
 
     /**
@@ -34,7 +39,20 @@ class ExpensesEntryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->debit===null && $request->credit===null){
+            return redirect()->back()->with('error','at least one of the credit or debit must be assigned');
+        }
+        DebitCredit::create([
+            'expenses_category_id'=>$request->expense_category_id,
+            'date'=>$request->date,
+            'bill_no'=>$request->bill_no,
+            'particular'=>$request->particular,
+            'debit'=>$request->debit,
+            'credit'=>$request->credit,
+            'remarks'=>$request->remarks
+        ]);
+        return redirect(URL::to("/Expenses-Entries?expense_category_id=$request->expense_category_id"))->with('success','Successfully created a record');
+
     }
 
     /**
@@ -56,7 +74,8 @@ class ExpensesEntryController extends Controller
      */
     public function edit($id)
     {
-       return view('expenses.edit');
+       $entry=DebitCredit::findOrFail($id);
+       return view('expenses.edit',compact('entry'));
     }
 
     /**
