@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CashBook;
 use Illuminate\Http\Request;
 
-class ExpensesEntry extends Controller
+class CashBookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class ExpensesEntry extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CashBook $cashBook)
     {
         //
     }
@@ -51,10 +52,10 @@ class ExpensesEntry extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CashBook $cashBook)
     {
         //
     }
@@ -63,10 +64,10 @@ class ExpensesEntry extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CashBook $cashBook)
     {
         //
     }
@@ -74,10 +75,10 @@ class ExpensesEntry extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CashBook $cashBook)
     {
         //
     }
