@@ -1,14 +1,16 @@
 @extends('assets.master')
+@section('title','Payroll | Electricity')
 @section('content')
 <div class="data-table-area mg-b-15">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="sparkline13-list">
-                    <div class="sparkline13-hd">
+                    <div class="sparkline13-hd add-button-outer">
                         <div class="main-sparkline13-hd">
                             <h1>Projects <span class="table-project-n">Data</span> Table</h1>
                         </div>
+                        <a href="{{route('Expenses-Entries.create')}}" class="btn btn-primary">Add <i class="fa fa-plus" aria-hidden="true"></i> </a>
                     </div>
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
@@ -63,9 +65,9 @@
                                         <td class="credit-td">10%</td>
                                         <td>Jul 14, 2017</td>
                                         <td class="datatable-ct"> 
-                                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a> 
-                                            <a style="color:#006DF0" href=""><i style="margin-left:4px" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a style="color:red" href=""><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a>
+                                            <a href="{{route('Expenses-Entries.show','id')}}"><i class="fa fa-eye" aria-hidden="true"></i></a> 
+                                            <a style="color:#006DF0" href="{{route('Expenses-Entries.edit','id')}}"><i style="margin-left:4px" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a style="color:red" href="{{route('Expenses-Entries.destroy','id')}}"><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                     <tr>

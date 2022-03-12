@@ -44,3 +44,13 @@
     color:white;
 
 }
+.add-button-outer{
+  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+}
+.breadcome-list{
+    margin-top: 58px;
+}
