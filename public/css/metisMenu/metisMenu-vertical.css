@@ -38,7 +38,7 @@
 }
 .sidebar-nav .metismenu a {
     position: relative;
-    display: block;
+    /* display: block; */
     padding: 13px 15px;
     color: #444;
     outline-width: 0;
@@ -72,10 +72,17 @@
 }
 #sidebar.active .metismenu li .mini-click-non{
 	display:none;
+    margin-left: 10px;
 }
 #sidebar.active .metismenu li .has-arrow:after{
-	display:none;
+    display:flex;
 }
 #sidebar.active .metismenu li .submenu-angle li a {
     padding: 10px 20px 10px 20px;
+}
+.list-icon{
+    margin-right: 10px;
+}
+.has-arrow{
+    display: flex;
 }

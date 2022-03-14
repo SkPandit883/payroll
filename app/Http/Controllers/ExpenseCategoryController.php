@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ExpenseCategory;
+use Illuminate\Support\Facades\URL;
 
 class ExpenseCategoryController extends Controller
 {
@@ -34,7 +36,14 @@ class ExpenseCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $expense_category=ExpenseCategory::create([
+            'name'=>$request->name,
+            'salary_share'=>$request->salary_share,
+            'category'=>$request->category
+        ]);
+        return redirect(URL::to("/Expenses-Entries?expense_category_id=$expense_category->id"))->with('success',"Successfully created $request->category:$request->name  ");
+
     }
 
     /**
@@ -68,7 +77,12 @@ class ExpenseCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $expense_category=ExpenseCategory::where('id',$id)->update([
+            'name'=>$request->name,
+            'salary_share'=>$request->salary_share,
+            'category'=>$request->category
+        ]);
+        return redirect(URL::to("/Expenses-Entries?expense_category_id=$id"))->with('success',"Successfully updated $request->category:$request->name  ");
     }
 
     /**
@@ -79,6 +93,7 @@ class ExpenseCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+       ExpenseCategory::find($id)->delete();
+       return redirect('/')->with('success','successfully deleted');
     }
 }

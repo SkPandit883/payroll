@@ -54,3 +54,18 @@
 .breadcome-list{
     margin-top: 58px;
 }
+.add-new-category-btn{
+    margin-left: 29px;
+    color: #006DF0
+}
+.add-new-category-btn button{
+  border: none;
+  outline: none;
+  background-color: white
+}
+.sidebar-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}

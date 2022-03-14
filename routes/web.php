@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExpensesEntryController;
+use App\Http\Controllers\ExpenseCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ Route::get('/', function () {
     return view('dashboard');
 });
 Route::resource('/Expenses-Entries',ExpensesEntryController::class);
+Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','delete']);

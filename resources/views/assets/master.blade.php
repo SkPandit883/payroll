@@ -6,6 +6,8 @@
         <title>@yield('title')</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/app.css" rel="stylesheet">
+
         <!-- favicon
             ============================================ -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}">
@@ -72,6 +74,12 @@
             ============================================ -->
         <link rel="stylesheet" href="{{asset('css/data-table/bootstrap-table.css')}}">
         <link rel="stylesheet" href="{{asset('css/data-table/bootstrap-editable.css')}}">
+        {{-- model --}}
+        <link rel="stylesheet" href="{{asset('css/modals.css')}}">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+
+
     </head>
     
 <body>
@@ -144,6 +152,7 @@
     <script src="{{asset('js/editable/bootstrap-datetimepicker.js')}}"></script>
     <script src="{{asset('js/editable/bootstrap-editable.js')}}"></script>
     <script src="{{asset('js/editable/xediable-active.js')}}"></script>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
     <script>
         function hideCancelButton(){
             var el=document.getElementById("noti");
@@ -153,5 +162,6 @@
 
         }
     </script>
+
 </body>
 </html>

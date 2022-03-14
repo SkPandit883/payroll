@@ -18,7 +18,7 @@
                                     <div class="all-form-element-inner">
                                         <form action="{{route('Expenses-Entries.store')}}" method="POST">
                                             @csrf
-                                            <input type="hidden" name="expense_category_id" value="{{$expense_category_id}}"/>
+                                            <input type="hidden" name="expense_category_id" value="{{$expense_category->id}}"/>
                                             <div class="form-group-inner">
                                                @if (session('error'))
                                                <div class="row">
@@ -40,16 +40,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group-inner">
-                                                <div class="row">
-                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                        <label class="login2 pull-right pull-right-pro">Bill NO.</label>
-                                                    </div>
-                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input required type="text" class="form-control" name="bill_no" />
+                                            @if($expense_category->category==='utility')
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <label class="login2 pull-right pull-right-pro">Bill NO.</label>
+                                                        </div>
+                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                            <input required type="text" class="form-control" name="bill_no" />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endif
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">

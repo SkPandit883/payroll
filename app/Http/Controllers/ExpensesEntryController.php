@@ -27,8 +27,8 @@ class ExpensesEntryController extends Controller
      */
     public function create(Request $request)
     {
-        $expense_category_id= $request->expense_category_id;
-        return view('expenses.create',compact('expense_category_id'));
+        $expense_category=ExpenseCategory::findOrFail($request->expense_category_id);
+        return view('expenses.create',compact('expense_category'));
     }
 
     /**
