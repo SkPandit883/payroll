@@ -36,7 +36,6 @@ class ExpenseCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $expense_category=ExpenseCategory::create([
             'name'=>$request->name,
             'salary_share'=>$request->salary_share,

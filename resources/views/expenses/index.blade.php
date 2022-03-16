@@ -8,7 +8,7 @@
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd add-button-outer">
                         <div class="main-sparkline13-hd">
-                            <h1>{{$expense_category->name}} <span class="table-project-n">Debit/Credit</span> Table</h1>
+                            <h1>{{$expense_category->expense_category}} <span class="table-project-n">Debit/Credit</span> Table</h1>
                         </div>
                         <a href="{{ URL::to("/Expenses-Entries/create?expense_category_id=$expense_category->id") }}" class="btn btn-primary">Add <i class="fa fa-plus" aria-hidden="true"></i> </a>
                     </div>

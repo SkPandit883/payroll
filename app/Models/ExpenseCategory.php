@@ -12,4 +12,8 @@ class ExpenseCategory extends Model
     public function expenses(){
         return $this->hasMany(DebitCredit::class,'expenses_category_id');
     }
+    public function getExpenseCategoryAttribute()
+    {
+        return ucfirst($this->name);
+    }
 }

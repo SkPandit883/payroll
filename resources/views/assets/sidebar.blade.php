@@ -30,10 +30,9 @@
                     <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/ios/25/000000/personal-trainer.png" /> <span class="mini-click-non">Personals</span></a>
                         <ul class="submenu-angle app-mini-nb-dp" aria-expanded="false">
-                            <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
-                            <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
-                            <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
-                            <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                            @foreach ($personals as $personal)
+                                <li><a title="Notifications" href="{{ URL::to('/Expenses-Entries?expense_category_id='.$personal->id) }}"><span class="mini-sub-pro">{{$personal->expense_category}}</span></a></li>                               
+                            @endforeach
                             <li>
                                 <span class="mini-sub-pro ml-5 hover:cursor-pointer text-blue-600 hover:text-blue-200" type="button" data-modal-toggle="personal-modal">Add New</span></a>
                                 {{-- <button class="text-blue-600 hover:text-blue-200" type="button" data-modal-toggle="authentication-modal">
@@ -53,7 +52,7 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                        <form method="POST" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="{{route('Expenses-Entries.store')}}">
+                                        <form method="POST" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="{{route('Expenses-Category.store')}}">
                                             @csrf
                                             <h3 class="text-xl font-medium text-gray-900">Add New Personal Account</h3>
                                             <div>
@@ -70,7 +69,7 @@
                                             </div>
                                             <div>
                                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Category</label>
-                                                <input type="text" readonly name="share_salary" id="password" placeholder="" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="personal" required>
+                                                <input type="text" readonly name="category" id="password" placeholder="" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="personal" required>
                                             </div>
 
                                             <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</button>
@@ -85,11 +84,9 @@
                     <li id="removable" style="margin-bottom: 40px">
                         <a class="has-arrow" href="#" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/external-outline-wichaiwi/19/000000/external-company-business-continuity-plan-outline-wichaiwi-3.png" /> <span class="mini-click-non">Companies</span></a>
                         <ul class="submenu-angle page-mini-nb-dp" aria-expanded="false">
-                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
-                            <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
-                            <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
-                            <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
-                            <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
+                            @foreach ($companies as $company)
+                               <li><a title="Notifications" href="{{ URL::to('/Expenses-Entries?expense_category_id='.$company->id) }}"><span class="mini-sub-pro">{{$company->expense_category}}</span></a></li>                               
+                           @endforeach
                             <li>
                                 <span class="mini-sub-pro ml-5 hover:cursor-pointer text-blue-600 hover:text-blue-200" type="button" data-modal-toggle="company-modal">Add New</span>
                             </li>
@@ -105,7 +102,7 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                        <form method="POST" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" {{route('Expenses-Entries.store')}}>
+                                        <form method="POST" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="{{route('Expenses-Category.store')}}">
                                             @csrf
                                             <h3 class="text-xl font-medium text-gray-900">Add New Company </h3>
                                             <div>
@@ -115,7 +112,7 @@
                                           
                                             <div>
                                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Category</label>
-                                                <input type="text" readonly name="share_salary" id="password" placeholder="" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="company" required>
+                                                <input type="text" readonly name="category" id="password" placeholder="" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="company" required>
                                             </div> 
                                             <div>
                                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Salary/Share</label>

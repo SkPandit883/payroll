@@ -12,4 +12,5 @@ class DebitCredit extends Model
     public function expenseCategory(){
         return $this->belongsTo(ExpenseCategory::class,'expenses_category_id');
     }
+   
 }

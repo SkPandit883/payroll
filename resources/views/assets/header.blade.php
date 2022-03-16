@@ -263,7 +263,7 @@
                                     </button>
                                     </div>
                                     <div class="toast-body">
-                                        {{ session('success') }}
+                                        <h4>{{ session('success') }}</h4>
                                     </div>
                                 </div>
                                 {{-- <div style="background-color: #006DF0;color:white" class="alert alert-primary col-lg-6 col-md-6 col-sm-6 col-xs-12">

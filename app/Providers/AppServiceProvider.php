@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\ExpenseCategory;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::share('personals',ExpenseCategory::where('category','personal')->get());
+        View::share('companies',ExpenseCategory::where('category','company')->get());
     }
 }
