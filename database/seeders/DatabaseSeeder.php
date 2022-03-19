@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\CashBook;
 use Illuminate\Database\Seeder;
+use Database\Factories\CashBookFactory;
 use Database\Seeders\ExpenseCategorySeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -20,5 +22,6 @@ class DatabaseSeeder extends Seeder
             ExpensesEntrySeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
+        CashBook::factory(20)->create();
     }
 }

@@ -7,9 +7,19 @@
 		display:none;
 	}
 	.logo-pro{
-		display:block;
+		/* display:block;
 		text-align:center;
-		background:#fff;
+		background:#fff; */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.res-logo{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
 	}
 	.menu-switcher-pro{
 		display:none;

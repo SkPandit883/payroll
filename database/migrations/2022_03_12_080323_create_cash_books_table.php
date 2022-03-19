@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('bill_no');
             $table->decimal('amount');
+            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }

@@ -186,12 +186,20 @@ body {}
 }
 .sidebar-header {
     text-align: center;
+    background-color: #006DF0
+    
+}
+.sidebar-header a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around; */
 }
 .sidebar-header h3 {
     font-size: 20px;
-    color: #fff;
     margin-top: 10px;
     margin-bottom: 5px;
+    color:#006DF0
 }
 #sidebar.active .sidebar-header .main-logo{
 	display:none;

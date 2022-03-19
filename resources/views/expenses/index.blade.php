@@ -1,5 +1,5 @@
 @extends('assets.master')
-@section('title','Payroll | Electricity')
+@section('title',"Payroll | $expense_category->expense_category")
 @section('content')
 <div class="data-table-area mg-b-15">
     <div class="container-fluid">
@@ -174,8 +174,8 @@
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Share/Salary</label>
                         <select required name="share_salary" id="" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             {{-- <option value="">Choose</option> --}}
-                            <option @if($expense_category->salary_share==="salary") selected @endif value="salary">Share</option>
-                            <option @if($expense_category->salary_share==="share") selected @endif value="share">Salary</option>
+                            <option @if($expense_category->salary_share==="share") selected @endif value="share">Share</option>
+                            <option @if($expense_category->salary_share==="salary") selected @endif value="salary">Salary</option>
                         </select>
                     </div>
                 @else

@@ -1,8 +1,9 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-            <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
+            <a href="/"><img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-save-money-ecommerce-kiranshastry-gradient-kiranshastry.png"/> <h3 class="font-extrabold">PAYROLL</h3></a>
+           
+            {{-- <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong> --}}
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -25,7 +26,7 @@
                     <li><a class="sidebar-list" href="{{ URL::to('/Expenses-Entries?expense_category_id=9') }}" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/ios/26/000000/passenger-with-baggage.png" /></span> <span class="mini-click-non">Travel Expenses</span></a></li>
                     <li><a class="sidebar-list" href="{{ URL::to('/Expenses-Entries?expense_category_id=10') }}" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/external-icongeek26-outline-icongeek26/25/000000/external-vehicle-war-icongeek26-outline-icongeek26.png" /></span> <span class="mini-click-non">Vehicle Fair</span></a></li>
                     <li><a class="sidebar-list" href="{{ URL::to('/Expenses-Entries?expense_category_id=11') }}" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/ios/21/000000/maintenance.png" /></span> <span class="mini-click-non">Vehicle Maintenance</span></a></li>
-                    <li><a class="sidebar-list" href="{{ URL::to('/Expenses-Entries?expense_category_id=12') }}" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/external-smashingstocks-detailed-outline-smashing-stocks/25/000000/external-cash-social-marketing-smashingstocks-detailed-outline-smashing-stocks.png" /> <span class="mini-click-non">Cash Book</span></a></li>
+                    <li><a class="sidebar-list" href="{{route('CashBook.index')}}" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/external-smashingstocks-detailed-outline-smashing-stocks/25/000000/external-cash-social-marketing-smashingstocks-detailed-outline-smashing-stocks.png" /> <span class="mini-click-non">Cash Book</span></a></li>
 
                     <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><img class="list-icon" src="https://img.icons8.com/ios/25/000000/personal-trainer.png" /> <span class="mini-click-non">Personals</span></a>

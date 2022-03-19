@@ -14,7 +14,9 @@ class CashBookController extends Controller
      */
     public function index()
     {
-        //
+        $total=CashBook::sum('amount');
+        $cashBooks=CashBook::all();
+        return view('cashbook.index',compact('cashBooks','total'));
     }
 
     /**
@@ -35,7 +37,8 @@ class CashBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cashBook=CashBook::create($request->all());
+        return redirect()->back()->with('success','successfully added a record');
     }
 
     /**
@@ -55,9 +58,9 @@ class CashBookController extends Controller
      * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function edit(CashBook $cashBook)
+    public function edit(CashBook $CashBook)
     {
-        //
+       return redirect()->route('CashBook.edit',compact('CashBook'));
     }
 
     /**
@@ -67,9 +70,10 @@ class CashBookController extends Controller
      * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CashBook $cashBook)
+    public function update(Request $request, CashBook $CashBook)
     {
-        //
+      $CashBook->update($request->all());
+      return redirect()->back()->with('success','successfully updated a record');
     }
 
     /**
@@ -78,8 +82,9 @@ class CashBookController extends Controller
      * @param  \App\Models\CashBook  $cashBook
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CashBook $cashBook)
+    public function destroy(CashBook $CashBook)
     {
-        //
+        $CashBook->delete();
+        return redirect()->back()->with('success','Successfully deleted');
     }
 }

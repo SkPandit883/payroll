@@ -85,7 +85,7 @@
 <body>
     @include('assets.sidebar')
     <div class="all-content-wrapper">
-        @include('assets.header')
+        @include('assets.header',['breadcum'=>'Debit Credit Data Table'])
         @yield('content')
         @include('assets.footer')
     </div>

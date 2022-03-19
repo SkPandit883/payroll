@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CashBookController;
 use App\Http\Controllers\ExpensesEntryController;
 use App\Http\Controllers\ExpenseCategoryController;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 Route::resource('/Expenses-Entries',ExpensesEntryController::class);
 Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','destroy']);
+Route::resource('CashBook',CashBookController::class)->only(['store','update','destroy','index','edit']);
