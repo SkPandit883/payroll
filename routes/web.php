@@ -19,4 +19,4 @@ Route::get('/', function () {
     return view('dashboard');
 });
 Route::resource('/Expenses-Entries',ExpensesEntryController::class);
-Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','delete']);
+Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','destroy']);

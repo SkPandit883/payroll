@@ -35,10 +35,10 @@ class ExpenseCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
         $expense_category=ExpenseCategory::create([
             'name'=>$request->name,
-            'salary_share'=>$request->salary_share,
+            'salary_share'=>$request->share_salary,
             'category'=>$request->category
         ]);
         return redirect(URL::to("/Expenses-Entries?expense_category_id=$expense_category->id"))->with('success',"Successfully created $request->category:$request->name  ");
@@ -92,7 +92,8 @@ class ExpenseCategoryController extends Controller
      */
     public function destroy($id)
     {
-       ExpenseCategory::find($id)->delete();
-       return redirect('/')->with('success','successfully deleted');
+       $category=ExpenseCategory::find($id);
+       $category->delete();
+       return redirect('/')->with('success',"successfully deleted $category->name with all expenses entries");
     }
 }

@@ -8,7 +8,7 @@
                 <div class="sparkline12-list">
                     <div class="sparkline12-hd">
                         <div class="main-sparkline12-hd">
-                            <h1>Add Electricity Expenses </h1>
+                            <h1>Add {{$expense_category->name}} Expenses </h1>
                         </div>
                     </div>
                     <div class="sparkline12-graph">

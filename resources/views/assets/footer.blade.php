@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="footer-copy-right">
-                    <p>Copyright © 2022. All rights reserved. Powered by <a href="https://colorlib.com/wp/templates/">Pulamiz Tech</a></p>
+                    <p>Copyright © 2022. All rights reserved. Powered by <a href="https://pulamiztech.com/">Pulamiz Tech</a></p>
                 </div>
             </div>
         </div>
