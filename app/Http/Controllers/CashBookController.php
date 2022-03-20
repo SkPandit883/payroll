@@ -15,7 +15,7 @@ class CashBookController extends Controller
     public function index()
     {
         $total=CashBook::sum('amount');
-        $cashBooks=CashBook::all();
+        $cashBooks=CashBook::orderBy('id','DESC')->get();
         return view('cashbook.index',compact('cashBooks','total'));
     }
 
@@ -60,7 +60,7 @@ class CashBookController extends Controller
      */
     public function edit(CashBook $CashBook)
     {
-       return redirect()->route('CashBook.edit',compact('CashBook'));
+       return view('cashbook.edit',compact('CashBook'));
     }
 
     /**
@@ -73,7 +73,7 @@ class CashBookController extends Controller
     public function update(Request $request, CashBook $CashBook)
     {
       $CashBook->update($request->all());
-      return redirect()->back()->with('success','successfully updated a record');
+      return redirect()->route('CashBook.index')->with('success','successfully updated a record');
     }
 
     /**

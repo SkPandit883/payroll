@@ -15,7 +15,7 @@
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <div id="toolbar" class="ml-6">
-                                <div class="credit">
+                                <div class="credit ml-4">
                                     <h2>Amount: </h2>
                                     <div class="credit-debit-icons-amount">
                                         <h1 class=" ml-2 font-bold text-blue-500 text-xl">{{$total}}</h1>
