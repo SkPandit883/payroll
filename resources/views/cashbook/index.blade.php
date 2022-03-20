@@ -52,11 +52,11 @@
                                             <a style="color:#006DF0" href="{{route('CashBook.edit',$cashBook->id)}}"><i style="margin-left:4px" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             {{-- <a style="color:red" href="{{route('Expenses-Entries.destroy',$expense->id)}}"><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a> --}}
                                            
-                                           <a class="dropdown-item" href="#" style="color:red" onclick="event.preventDefault();                             
-                                               document.getElementById('cashbook-destroy-form').submit();">
+                                            <a class="dropdown-item" href="#" style="color:red" onclick="event.preventDefault();                             
+                                               document.getElementById('cashbook-destroy-form-{{$cashBook->id}}').submit();">
                                                 <i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i>
                                             </a>
-                                            <form id="cashbook-destroy-form" action="{{ route('CashBook.destroy',$cashBook->id) }}" method="POST" style="display: none;">
+                                            <form id="cashbook-destroy-form-{{$cashBook->id}}" action="{{ route('CashBook.destroy',$cashBook->id) }}" method="POST" style="display: none;">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
