@@ -17,7 +17,17 @@ use App\Http\Controllers\ExpenseCategoryController;
 |
 */
 
-Route::get('/',[DashBoardController::class,'dashboard']);
-Route::resource('/Expenses-Entries',ExpensesEntryController::class);
-Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','destroy']);
-Route::resource('CashBook',CashBookController::class)->only(['store','update','destroy','index','edit']);   
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');\
+Route::middleware(['auth'])->group(function(){
+    Route::get('/',function(){
+        return redirect()->route('dashboard');
+    });
+    Route::get('/dashboard',[DashBoardController::class,'dashboard'])->name('dashboard');       
+    Route::resource('/Expenses-Entries',ExpensesEntryController::class);
+    Route::resource('Expenses-Category', ExpenseCategoryController::class)->only(['store','update','destroy']);
+    Route::resource('CashBook',CashBookController::class)->only(['store','update','destroy','index','edit']);  
+});
+require __DIR__.'/auth.php';

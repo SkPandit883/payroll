@@ -43,7 +43,7 @@
                                             </a>
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 {{-- <img src="img/product/pro4.jpg" alt="" /> --}}
-                                                <span class="admin-name">Prof.Anderson</span>
+                                                <span class="admin-name">{{Auth::user()->name}}</span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
 
@@ -54,8 +54,14 @@
                                                 </li>
 
 
-                                                <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                <li>
+                                                    <a  href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="edu-icon edu-locked author-log-ic cursor-pointer"></span>Log Out</a>
                                                 </li>
+
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
                                             </ul>
                                         </li>
 
@@ -157,15 +163,15 @@
                         </div>
                         @endif
                         @if (!$dashboard)
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul class="breadcome-menu">
-                                    <li><a href="/">Home</a> <span class="bread-slash">/</span>
-                                    </li>
-                                    <li><span class="bread-blod">{{$breadcum}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li><a href="/">Home</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">{{$breadcum}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
                         @endif
                     </div>
                 </div>
