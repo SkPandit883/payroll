@@ -85,7 +85,7 @@
 <body>
     @include('assets.sidebar')
     <div class="all-content-wrapper">
-        @include('assets.header',['breadcum'=>'DataTable'])
+        @include('assets.header')
         @yield('content')
         @include('assets.footer')
     </div>

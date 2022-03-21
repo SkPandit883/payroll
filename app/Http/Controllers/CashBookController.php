@@ -16,7 +16,8 @@ class CashBookController extends Controller
     {
         $total=CashBook::sum('amount');
         $cashBooks=CashBook::orderBy('id','DESC')->get();
-        return view('cashbook.index',compact('cashBooks','total'));
+        $breadcum="CashBook";
+        return view('cashbook.index',compact('cashBooks','total','breadcum'));
     }
 
     /**

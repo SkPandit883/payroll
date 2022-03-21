@@ -18,7 +18,8 @@ class ExpensesEntryController extends Controller
     {
        $expense_category= ExpenseCategory::with(['expenses'=>function($query){$query->orderBy('id','DESC');}])->withSum('expenses as total_debit','debit')->withSum('expenses as total_credit','credit')->findOrFail($request->expense_category_id);
     //    return $expense_category;
-       return view('expenses.index',compact('expense_category'));
+       $breadcum=$expense_category->expense_category;
+       return view('expenses.index',compact('expense_category','breadcum'));
     }
 
     /**
