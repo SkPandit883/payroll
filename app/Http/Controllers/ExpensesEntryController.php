@@ -31,7 +31,9 @@ class ExpensesEntryController extends Controller
     {
         $expense_category=ExpenseCategory::findOrFail($request->expense_category_id);
         // return $expense_category;
-        return view('expenses.create',compact('expense_category'));
+       $breadcum=$expense_category->expense_category;
+
+        return view('expenses.create',compact('expense_category','breadcum'));
     }
 
     /**
@@ -77,8 +79,9 @@ class ExpensesEntryController extends Controller
      */
     public function edit($id)
     {
-       $entry=DebitCredit::findOrFail($id);
-       return view('expenses.edit',compact('entry'));
+       $entry=DebitCredit::with('expenseCategory')->findOrFail($id);
+       $breadcum=$entry->expenseCategory->name.' / '.'Edit';
+       return view('expenses.edit',compact('entry','breadcum'));
     }
 
     /**
