@@ -11,7 +11,7 @@
                             <h1>{{$expense_category->expense_category}} <span class="table-project-n">Debit/Credit</span> Table</h1>
                             @if ($expense_category->category!='utility')
                                 <div>
-                                    <span class="mini-sub-pro ml-5 hover:cursor-pointer text-blue-600 hover:text-blue-200" type="button" data-modal-toggle="category-edit-modal"><img src="https://img.icons8.com/material-outlined/24/3552bd/pencil--v1.png" /></span></a>
+                                    <span class="ml-5 text-blue-600 mini-sub-pro hover:cursor-pointer hover:text-blue-200" type="button" data-modal-toggle="category-edit-modal"><img src="https://img.icons8.com/material-outlined/24/3552bd/pencil--v1.png" /></span></a>
                                     <a data-modal-toggle="category-delete-modal" class="dropdown-item" href="#" style="color:red" >
                                         <img src="https://img.icons8.com/material-outlined/24/ff0022/trash--v1.png" />
                                     </a>
@@ -48,9 +48,9 @@
                                         $total=$expense_category->total_credit-$expense_category->total_debit
                                         @endphp
                                         @if($total>0)
-                                        <h4 class="credit-amount">{{$total}}</h4>
+                                        <h4 class="credit-amount">{{number_format($total,2)}}</h4>
                                         <img src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/20/000000/external-arrow-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya-17.png" />
-                                        @elseif($total<0) <h4 class="debit-amount">{{$total}}</h4>
+                                        @elseif($total<0) <h4 class="debit-amount">{{number_format($total,2)}}</h4>
                                             <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/20/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-6.png" />
                                             @else
                                             <img src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/20/000000/external-arrow-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya-17.png" />
@@ -121,8 +121,8 @@
         </div>
     </div>
 </div>
-<div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="category-delete-modal" aria-hidden="true">
-    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+<div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full" id="category-delete-modal" aria-hidden="true">
+    <div class="relative w-full h-full max-w-md px-4 md:h-auto">
 
         <div class="relative bg-white rounded-lg shadow">
 
@@ -135,7 +135,7 @@
             </div>
 
             <div class="p-6 pt-0 text-center">
-                <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
 
@@ -150,8 +150,8 @@
         </div>
     </div>
 </div>
-<div id="category-edit-modal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+<div id="category-edit-modal" aria-hidden="true" class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 h-modal md:h-full md:inset-0">
+    <div class="relative w-full h-full max-w-md px-4 md:h-auto">
 
         <div class="relative bg-white rounded-lg shadow ">
             <div class="flex justify-end p-2">
