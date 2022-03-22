@@ -78,6 +78,7 @@
         <link rel="stylesheet" href="{{asset('css/modals.css')}}">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+        @livewireStyles
 
 
     </head>
@@ -89,6 +90,9 @@
         @yield('content')
         @include('assets.footer')
     </div>
+    {{-- livewire --}}
+    @livewireScripts
+
  <!-- jquery============================================ -->
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- bootstrap JS============================================ -->
