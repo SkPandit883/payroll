@@ -22,8 +22,8 @@ class ExpensesEntrySeeder extends Seeder
     }
     public function run()
     {
-        for ($i=1; $i <=11 ; $i++) { 
-           for ($j=0; $j <9 ; $j++) { 
+        for ($i=1; $i <=11 ; $i++) {
+           for ($j=0; $j <9 ; $j++) {
               DebitCredit::create([
                 'expenses_category_id'=>$i,
                 'date'=>date('Y-m-d'),

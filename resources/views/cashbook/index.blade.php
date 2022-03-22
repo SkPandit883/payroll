@@ -15,14 +15,14 @@
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <div id="toolbar" class="ml-6">
-                                <div class="credit ml-4">
+                                <div class="ml-4 credit">
                                     <h2>Amount: </h2>
                                     <div class="credit-debit-icons-amount">
-                                        <h1 class=" ml-2 font-bold text-blue-500 text-xl">{{$total}}</h1>
+                                        <h1 class="ml-2 text-xl font-bold text-blue-500 ">{{number_format($total,2)}}</h1>
                                     </div>
                                 </div>
-                               
-                               
+
+
                             </div>
 
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
@@ -45,14 +45,14 @@
                                         <td>{{$loop->index+1}}</td>
                                         <td>{{$cashBook->date}}</td>
                                         <td>{{$cashBook->bill_no}}</td>
-                                        <td>{{$cashBook->amount}}</td>
+                                        <td>{{number_format($cashBook->amount,2)}}</td>
                                         <td>{{$cashBook->remarks}}</td>
                                         <td class="datatable-ct">
                                             <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a style="color:#006DF0" href="{{route('CashBook.edit',$cashBook->id)}}"><i style="margin-left:4px" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             {{-- <a style="color:red" href="{{route('Expenses-Entries.destroy',$expense->id)}}"><i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i></a> --}}
-                                           
-                                            <a class="dropdown-item" href="#" style="color:red" onclick="event.preventDefault();                             
+
+                                            <a class="dropdown-item" href="#" style="color:red" onclick="event.preventDefault();
                                                document.getElementById('cashbook-destroy-form-{{$cashBook->id}}').submit();">
                                                 <i style="margin-left:4px" class="fa fa-trash" aria-hidden="true"></i>
                                             </a>
@@ -60,7 +60,7 @@
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
-                                            
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -76,11 +76,11 @@
 </div>
 
 
-<div id="cashbook-add-modal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+<div id="cashbook-add-modal" aria-hidden="true" class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 h-modal md:h-full md:inset-0">
+    <div class="relative w-full h-full max-w-md px-4 md:h-auto">
 
         <div class="relative bg-white rounded-lg shadow ">
-            
+
             <form method="POST" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="{{route('CashBook.store')}}">
                 @csrf
                 <div class="flex justify-end p-2">
@@ -96,7 +96,7 @@
                     <label for="Date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Date</label>
                     <input value="{{date('Y-m-d')}}" type="date" name="date" id="email" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-500 "  required>
                 </div>
-                
+
                 <div>
                     <label for="bill_no" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Bill No</label>
                     <input type="text"  name="bill_no" id="password" placeholder="xyz" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="xyz" required>
@@ -104,7 +104,7 @@
                 <div>
                     <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Amount</label>
                     <input type="number"  name="amount" id="password" placeholder="12231.23" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
-                </div> 
+                </div>
                 <div>
                     <label for="remark" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Remark</label>
                     <input type="text"  name="remarks" id="password" placeholder="sold item" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="xyz" required>
